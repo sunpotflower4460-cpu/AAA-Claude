@@ -14,7 +14,7 @@ export const NoteCard = ({ note, onClick }: NoteCardProps) => {
   return (
     <button
       onClick={onClick}
-      className="w-full text-left p-21 bg-paper border-l-2 border-sumi/10 hover:border-gold/50 rounded transition-calm"
+      className="w-full text-left p-21 bg-paper border-l-2 border-sumi/10 hover:border-gold/50 rounded transition-calm active:scale-[0.98]"
       aria-label={`メモを開く: ${displayTitle}`}
     >
       <div className="flex items-start justify-between gap-13 mb-8">
@@ -22,7 +22,7 @@ export const NoteCard = ({ note, onClick }: NoteCardProps) => {
           {displayTitle}
         </h3>
         {note.isFavorite && (
-          <span className="text-gold text-lg" aria-label="お気に入り">
+          <span className="text-gold text-lg flex-shrink-0" aria-label="お気に入り">
             ★
           </span>
         )}

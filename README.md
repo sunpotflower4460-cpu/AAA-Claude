@@ -61,7 +61,7 @@
 
 ## 開発状態
 
-**Phase 3 完了** — MVP実装完了
+**Phase 4 完了** — 最終調整・デバッグ・Cloudflareデプロイ準備完了
 
 ---
 
@@ -102,6 +102,7 @@ MVP完成後、以下の設定でCloudflare Pagesへデプロイ可能です。
 | **Phase 1** | README/docsに設計を入れる | しない |
 | **Phase 2** | 監査フェーズ（設計確認・微修正） | しない |
 | **Phase 3** | MVPまで一気に作る | MVP完成後のみ |
+| **Phase 4** | 最終調整・デバッグ・デプロイ準備 | 準備完了 |
 
 詳細は [docs/development-phases.md](docs/development-phases.md) を参照。
 
@@ -123,4 +124,6 @@ MVP完成後、以下の設定でCloudflare Pagesへデプロイ可能です。
 | [docs/design-system.md](docs/design-system.md) | UI/UXとデザインシステム |
 | [docs/mvp-spec.md](docs/mvp-spec.md) | MVP仕様 |
 | [docs/development-phases.md](docs/development-phases.md) | 開発フェーズ |
+| [docs/phase-3-completion.md](docs/phase-3-completion.md) | Phase 3 完了レポート |
+| [docs/final-polish-and-deploy-phase-4.md](docs/final-polish-and-deploy-phase-4.md) | Phase 4 最終調整レポート |
 | [.github/copilot-instructions.md](.github/copilot-instructions.md) | Cloud Agent / Copilot向け作業ルール |
