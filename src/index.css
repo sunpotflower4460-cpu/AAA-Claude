@@ -1,0 +1,46 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --color-washi: #F7F1E5;
+  --color-paper: #FBF8F1;
+  --color-sumi: #1F1B18;
+  --color-ink-muted: #5F5750;
+  --color-gold: #C9A646;
+  --color-indigo: #243B53;
+  --color-vermilion: #B14A36;
+  --color-line: rgba(31, 27, 24, 0.12);
+  --color-shadow: rgba(31, 27, 24, 0.08);
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Hiragino Sans', 'Noto Sans JP', system-ui, sans-serif;
+  background-color: var(--color-washi);
+  color: var(--color-sumi);
+  line-height: 1.618;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+#root {
+  min-height: 100vh;
+}
+
+.font-serif {
+  font-family: 'Hiragino Mincho ProN', 'Yu Mincho', 'Noto Serif JP', 'Noto Serif', serif;
+}
+
+.transition-calm {
+  transition: all 300ms ease-in-out;
+}
+
+.transition-slow {
+  transition: all 400ms ease-in-out;
+}

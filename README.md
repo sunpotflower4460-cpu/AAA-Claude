@@ -59,6 +59,42 @@
 
 ---
 
+## 開発状態
+
+**Phase 3 完了** — MVP実装完了
+
+---
+
+## セットアップ
+
+```bash
+# 依存関係のインストール
+npm install
+
+# 開発サーバー起動
+npm run dev
+
+# プロダクションビルド
+npm run build
+
+# ビルドしたアプリのプレビュー
+npm run preview
+```
+
+---
+
+## Cloudflare Pages デプロイ設定
+
+MVP完成後、以下の設定でCloudflare Pagesへデプロイ可能です。
+
+| 設定項目 | 値 |
+|---------|---|
+| Build command | `npm run build` |
+| Build output directory | `dist` |
+| Node.js version | 18以上推奨 |
+
+---
+
 ## 開発フェーズ
 
 | フェーズ | 内容 | Cloudflareデプロイ |
