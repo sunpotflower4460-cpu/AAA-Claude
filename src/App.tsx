@@ -96,6 +96,7 @@ function App() {
   return (
     <AppShell
       notes={sortedNotes}
+      totalNotes={notes.length}
       searchQuery={searchQuery}
       onSearchChange={setSearchQuery}
       onSelectNote={handleSelectNote}

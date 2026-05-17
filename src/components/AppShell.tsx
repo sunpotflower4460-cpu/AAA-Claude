@@ -6,6 +6,7 @@ import { Note } from '../types/note';
 
 interface AppShellProps {
   notes: Note[];
+  totalNotes: number;
   searchQuery: string;
   onSearchChange: (value: string) => void;
   onSelectNote: (note: Note) => void;
@@ -14,11 +15,16 @@ interface AppShellProps {
 
 export const AppShell = ({
   notes,
+  totalNotes,
   searchQuery,
   onSearchChange,
   onSelectNote,
   onCreateNote,
 }: AppShellProps) => {
+  const hasNotes = totalNotes > 0;
+  const hasSearchQuery = searchQuery.trim().length > 0;
+  const noResults = hasNotes && hasSearchQuery && notes.length === 0;
+
   return (
     <div className="min-h-screen bg-washi">
       <div className="max-w-2xl mx-auto px-21 py-34">
@@ -41,7 +47,18 @@ export const AppShell = ({
         </div>
 
         {/* Content */}
-        {notes.length === 0 ? (
+        {noResults ? (
+          <div className="flex flex-col items-center justify-center min-h-[40vh] px-21">
+            <div className="text-center space-y-13">
+              <p className="text-base text-ink">
+                言葉は見つかりませんでした。
+              </p>
+              <p className="text-sm text-ink/70">
+                No words found.
+              </p>
+            </div>
+          </div>
+        ) : notes.length === 0 ? (
           <EmptyState onCreateNote={onCreateNote} />
         ) : (
           <NotesList
