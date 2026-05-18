@@ -26,31 +26,33 @@ export const AppShell = ({
   const noResults = hasNotes && hasSearchQuery && notes.length === 0;
 
   return (
-    <div className="min-h-screen bg-washi">
-      <div className="max-w-2xl mx-auto px-21 py-34">
+    <div className="min-h-screen">
+      <div className="max-w-2xl mx-auto px-21 py-55">
         {/* Header */}
-        <header className="mb-34 text-center space-y-8">
-          <h1 className="text-2xl font-serif text-sumi">
+        <header className="mb-55 text-center space-y-13 animate-fade-in">
+          <h1 className="text-4xl font-serif text-sumi tracking-wide" style={{ letterSpacing: '0.1em' }}>
             {copy.appName}
           </h1>
-          <p className="text-sm text-ink">
+          <p className="text-sm text-ink/80 font-serif italic">
             {copy.appSubtitle}
           </p>
-          <p className="text-xs text-ink/70 max-w-md mx-auto">
-            {copy.tagline}
-          </p>
+          <div className="pt-8">
+            <p className="text-xs text-ink/60 max-w-md mx-auto leading-relaxed">
+              {copy.tagline}
+            </p>
+          </div>
         </header>
 
         {/* Search */}
-        <div className="mb-34">
+        <div className="mb-34 animate-slide-up" style={{ animationDelay: '100ms', animationFillMode: 'backwards' }}>
           <SearchBar value={searchQuery} onChange={onSearchChange} />
         </div>
 
         {/* Content */}
         {noResults ? (
-          <div className="flex flex-col items-center justify-center min-h-[40vh] px-21">
+          <div className="flex flex-col items-center justify-center min-h-[40vh] px-21 animate-fade-in">
             <div className="text-center space-y-13">
-              <p className="text-base text-ink">
+              <p className="text-base text-ink font-serif">
                 言葉は見つかりませんでした。
               </p>
               <p className="text-sm text-ink/70">
