@@ -22,15 +22,45 @@
 
 body {
   font-family: 'Hiragino Sans', 'Noto Sans JP', system-ui, sans-serif;
-  background-color: var(--color-washi);
+  background: linear-gradient(to bottom, #F7F1E5 0%, #F9F3E8 100%);
+  background-attachment: fixed;
   color: var(--color-sumi);
   line-height: 1.618;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
+body::before {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image:
+    repeating-linear-gradient(
+      90deg,
+      transparent,
+      transparent 2px,
+      rgba(31, 27, 24, 0.015) 2px,
+      rgba(31, 27, 24, 0.015) 4px
+    ),
+    repeating-linear-gradient(
+      0deg,
+      transparent,
+      transparent 2px,
+      rgba(31, 27, 24, 0.015) 2px,
+      rgba(31, 27, 24, 0.015) 4px
+    );
+  pointer-events: none;
+  z-index: 1;
+  opacity: 0.4;
+}
+
 #root {
   min-height: 100vh;
+  position: relative;
+  z-index: 2;
 }
 
 .font-serif {
@@ -38,22 +68,52 @@ body {
 }
 
 .transition-calm {
-  transition: all 300ms ease-in-out;
+  transition: all 300ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .transition-slow {
-  transition: all 400ms ease-in-out;
+  transition: all 400ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 @keyframes fade-in {
   from {
     opacity: 0;
+    transform: translateY(8px);
   }
   to {
     opacity: 1;
+    transform: translateY(0);
   }
 }
 
 .animate-fade-in {
-  animation: fade-in 300ms ease-in-out;
+  animation: fade-in 400ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+@keyframes breath {
+  0%, 100% {
+    opacity: 0.6;
+  }
+  50% {
+    opacity: 1;
+  }
+}
+
+.animate-breath {
+  animation: breath 3s ease-in-out infinite;
+}
+
+@keyframes slide-up {
+  from {
+    opacity: 0;
+    transform: translateY(21px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-slide-up {
+  animation: slide-up 400ms cubic-bezier(0.4, 0, 0.2, 1);
 }
